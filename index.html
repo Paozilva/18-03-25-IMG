@@ -5,31 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>img</title>
     <link rel ="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap-grid.min.css"/>
+    <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f0f0f0;
+        }
+    
+        .container {
+          text-align: left;
+        }
+    button {
+        background: linear-gradient(135deg, #8c00ff, hsl(54, 87%, 50%)); /* Degradê moderno */
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 14px; /* Cantos arredondados */
+        transition: all 0.3s ease-in-out; /* Transição suave */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    button:hover {
+        transform: scale(1.05); /* Leve aumento no hover */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    button:active {
+        transform: scale(0.98); /* Efeito de clique */
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Efeito de brilho ao passar o mouse */
+    button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(250, 2, 2, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    button:hover::before {
+        left: 100%;
+        }
+    label{
+        font-size: 18px;
+        font-weight: bold;
+    }
+ </style>
 </head>
-<body>
-       <div class="container">
+<body> 
+    <div class="container">
         <div class="row">
             <div class="col">
              <button onclick="girarHorario()">girar horário</button><br>
-             <button onclick="girarAntiHorario()">girar anti-horário</button><br>
+             <br/>
+             <button onclick="girarAntiHorario()">girar anti-horário</button><br/>
+             <br/>
 
-             <label for="txtGraus">Graus:</label><br>
-             <input type="number" id="txtGraus" /><br>
+             <label for="txtGraus">GRAUS:</label><br/>
+             <br/>
+             <input type="number" id="txtGraus" /><br/>
+             <br/>
 
-             <button onclick="moverDireita()">Mover para direita</button><br>
-             <button onclick="moverEsquerda()">Mover para esquerda</button><br>
-             <button onclick="moverBaixo()">Mover para baixo</button><br>
-             <button onclick="moverCima()">Mover para cima</button><br>
-             <button onclick="moverAleatorio()">Mover aleatório</button><br>
+             <button onclick="moverDireita()">Mover para direita</button><br/>
+             <br/>
+             <button onclick="moverEsquerda()">Mover para esquerda</button><br/>
+             <br/>
+             <button onclick="moverBaixo()">Mover para baixo</button><br/>
+             <br/>
+             <button onclick="moverCima()">Mover para cima</button><br/>
+             <br/>
+             <button onclick="moverAleatorio()">Mover aleatório</button><br/>
+             <br/>
+             <button onclick="moverCentro()">Mover para o Centro</button><br/>
+             <br/>
+             <button onclick="sumirImagem()">Botton Fantasma</button><br/>
+             <br/>
+             
 
-             <label for="txtPixels">Pixels:</label><br>
-             <input type="number" id="txtPixels" />
+             <label for="txtPixels">PIXELS:</label><br/>
+             <br/>
+             <input type="number" id="txtPixels" /><br/>
+             <br/>
+             
           </div>
-          <div class="col">
-                 <img src="./imagen.png" id="img" />
-          </div>
-       </div>
+        </div>
     </div>
+    <div class="col">
+        <img src="./imagen.png" id="img" />
+    </div>      
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <script src="./img.js"></script>
 </body>
